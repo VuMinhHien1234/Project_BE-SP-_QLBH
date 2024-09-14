@@ -57,7 +57,7 @@
           </div>
           <div class="widget-body">
             <div class="widget-main" >
-              <form:form   id="listForm" >
+              <form:form id="listForm" action="/admin/building-list" method="GET" >
               <div class="row">
                 <div class="form-group">
                   <div class="col-xs-12">
@@ -177,14 +177,14 @@
                     </div>
                   </div>
                 </div>
-
+                </form:form>
                 <div class=" pull-right">
                   <button class="btn">Xóa </button>
                   <a class="btn btn-primary"  href='/admin/building-edit'>Thêm</a>
                 </div>
               </div>
 
-              </form:form>
+
 
 
 
@@ -293,24 +293,31 @@
       </div><!-- /.page-content -->
     </div>
   </div>
+  <script>
+      function assignmentBuilding(buildingId) {
+          $('#assignmentBuildingModal').modal();
+          $('#buildingId').val();
+      }
+
+      $('#btnassignmentBuilding').click(function(e){
+          e.preventDefault();
+          var data={};
+          data['buildingId'] =$('buildingId').val();
+          var staffs= $('#staffList').find('tbody input[type = checkbox]:checked').map(function(){
+              return $(this).val();
+          }).get();
+          data['staffs']=staffs;
+          console.log("OK");
+      });
+
+      $('#btnSearchBuilding').click(function (e){
+          e.preventDefault();
+          $('#listForm').submit();
+      });
+
+  </script>
   </body>
 </html>
 
 
-<script>
-    function assignmentBuilding(buildingId) {
-        $('#assignmentBuildingModal').modal();
-        $('#buildingId').val();
-    }
 
-    $('#btnassignmentBuilding').click(function(e){
-        e.preventDefault();
-        var data={};
-        data['buildingId'] =$('buildingId').val();
-        var staffs= $('#staffList').find('tbody input[type = checkbox]:checked').map(function(){
-            return $(this).val();
-        }).get();
-        data['staffs']=staffs;
-        console.log("OK");
-    });
-</script>
