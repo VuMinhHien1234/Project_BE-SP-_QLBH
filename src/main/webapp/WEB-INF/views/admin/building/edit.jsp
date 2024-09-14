@@ -169,7 +169,7 @@
             </div>
             <div class="col-xs-12" style="margin-top: 10px;">
               <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Phường </label>
+                <label class="col-sm-3 control-label no-padding-right" > Phường </label>
                 <div class="col-sm-9">
                   <input type="text" id="ward" name="ward" class="form-control">
                 </div>
@@ -177,7 +177,7 @@
             </div>
             <div class="col-xs-12" style="margin-top: 10px;">
               <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Đường </label>
+                <label class="col-sm-3 control-label no-padding-right" > Đường </label>
 
                 <div class="col-sm-9">
                   <input type="text" id="street" name="street" class="form-control">
@@ -186,7 +186,7 @@
             </div>
             <div class="col-xs-12" style="margin-top: 10px;">
               <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Kết cấu </label>
+                <label class="col-sm-3 control-label no-padding-right" >Kết cấu </label>
 
                 <div class="col-sm-9">
                   <input type="text" id="structure" name="structure" class="form-control">
@@ -195,7 +195,7 @@
             </div>
             <div class="col-xs-12" style="margin-top: 10px;">
               <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Số tầng hầm</label>
+                <label class="col-sm-3 control-label no-padding-right" >Số tầng hầm</label>
                 <div class="col-sm-9">
                   <input type="number" id="numberOfBasement" name="numberOfBasement" class="form-control">
                 </div>
@@ -204,7 +204,7 @@
 
             <div class="col-xs-12" style="margin-top: 10px;">
               <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Diện tích sàn</label>
+                <label class="col-sm-3 control-label no-padding-right" >Diện tích sàn</label>
 
                 <div class="col-sm-9">
                   <input type="number" id="floorarea" name="floorarea" class="form-control">
@@ -213,7 +213,7 @@
             </div>
             <div class="col-xs-12" style="margin-top: 10px;">
               <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Hướng </label>
+                <label class="col-sm-3 control-label no-padding-right" > Hướng </label>
 
                 <div class="col-sm-9">
                   <input type="text" id="direction" name="direction" class="form-control">
@@ -222,7 +222,7 @@
             </div>
             <div class="col-xs-12" style="margin-top: 10px;">
               <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Hạng </label>
+                <label class="col-sm-3 control-label no-padding-right"  > Hạng </label>
 
                 <div class="col-sm-9">
                   <input type="text" id="level" name="level" class="form-control">
@@ -231,7 +231,7 @@
             </div>
             <div class="col-xs-12" style="margin-top: 10px;">
               <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Diện tích thuê </label>
+                <label class="col-sm-3 control-label no-padding-right"  > Diện tích thuê </label>
 
                 <div class="col-sm-9">
                   <input type="text" id="rentarea" name="rentarea" class="form-control">
@@ -241,7 +241,7 @@
 
             <div class="col-xs-12" style="margin-top: 10px;">
               <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Giá thuê </label>
+                <label class="col-sm-3 control-label no-padding-right"  > Giá thuê </label>
 
                 <div class="col-sm-9">
                   <input type="text" id="rentprice" name="rentprice" class="form-control">
@@ -250,7 +250,7 @@
             </div>
             <div class="col-xs-12" style="margin-top: 10px;">
               <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Mô tả giá </label>
+                <label class="col-sm-3 control-label no-padding-right"  > Mô tả giá </label>
 
                 <div class="col-sm-9">
                   <input type="text" id="rentpricedescription" name="rentpricedescription" class="form-control">
@@ -259,7 +259,7 @@
             </div>
             <div class="col-xs-12" style="margin-top: 10px;">
               <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Phí dịch vụ</label>
+                <label class="col-sm-3 control-label no-padding-right"  >Phí dịch vụ</label>
 
                 <div class="col-sm-9">
                   <input type="text" id="servicefee" name="servicefee" class="form-control">
@@ -268,7 +268,7 @@
             </div>
             <div class="col-xs-12" style="margin-top: 10px;">
               <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Phí ô tô </label>
+                <label class="col-sm-3 control-label no-padding-right"  > Phí ô tô </label>
 
                 <div class="col-sm-9">
                   <input type="number" id="carfee" name="carfee" class="form-control">
@@ -277,7 +277,7 @@
             </div>
             <div class="col-xs-12" style="margin-top: 10px;">
               <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Phí mô tô </label>
+                <label class="col-sm-3 control-label no-padding-right"  > Phí mô tô </label>
 
                 <div class="col-sm-9">
                   <input type="number" id="motorbikefee" name="motorbikefee" class="form-control">
@@ -286,7 +286,7 @@
             </div>
             <div class="col-xs-12" style="margin-top: 10px;">
               <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Phí ngoài giờ </label>
+                <label class="col-sm-3 control-label no-padding-right"  > Phí ngoài giờ </label>
 
                 <div class="col-sm-9">
                   <input type="text" id="overtimefee" name="overtimefee" class="form-control">
@@ -296,7 +296,7 @@
 
             <div class="col-xs-12" style="margin-top: 10px;">
               <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Tiền điện </label>
+                <label class="col-sm-3 control-label no-padding-right"  > Tiền điện </label>
 
                 <div class="col-sm-9">
                   <input type="text" id="electricityfee" name="electricityfee" class="form-control">
@@ -305,16 +305,16 @@
             </div>
             <div class="col-xs-12" style="margin-top: 10px; margin-bottom: 10px">
               <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Loại tòa nhà </label>
+                <label class="col-sm-3 control-label no-padding-right"  > Loại tòa nhà </label>
                 <div class="col-sm-9">
                   <label class="checkbox-inline">
-                    <input type="checkbox" id="typeCode" name="typeCode" value="noi-that"> Nội thất
+                    <input type="checkbox" name="typeCode" value="noi-that"> Nội thất
                   </label>
                   <label class="checkbox-inline">
-                    <input type="checkbox" id="typeCode" name="typeCode" value="nguyen-can">Tầng trệt
+                    <input type="checkbox"  name="typeCode" value="nguyen-can">Tầng trệt
                   </label>
                   <label class="checkbox-inline">
-                    <input type="checkbox" id="typeCode" name="typeCode" value="tang-tret">Tòa nhà
+                    <input type="checkbox"  name="typeCode" value="tang-tret">Tòa nhà
                   </label>
                 </div>
               </div>
@@ -323,7 +323,7 @@
               <div class="form-group">
                 <label class="col-xs-3"></label>
                 <div class="col-xs-9">
-                  <button class="btn btn-success" style="margin-right: 8px;" id="btnAddBuilding">Thêm tòa nhà</button>
+                  <button class="btn btn-success" style="margin-right: 8px;" >Thêm tòa nhà</button>
                   <button class="btn btn-danger" id="btnAddBuilding">Hủy tòa nhà</button>
                 </div>
               </div>

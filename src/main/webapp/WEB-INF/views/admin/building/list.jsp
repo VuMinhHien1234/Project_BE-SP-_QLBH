@@ -41,79 +41,6 @@
       </div>
 
       <div class="page-content">
-        <div class="ace-settings-container" id="ace-settings-container">
-          <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
-            <i class="ace-icon fa fa-cog bigger-130"></i>
-          </div>
-
-          <div class="ace-settings-box clearfix" id="ace-settings-box">
-            <div class="pull-left width-50">
-              <div class="ace-settings-item">
-                <div class="pull-left">
-                  <select id="skin-colorpicker" class="hide">
-                    <option data-skin="no-skin" value="#438EB9">#438EB9</option>
-                    <option data-skin="skin-1" value="#222A2D">#222A2D</option>
-                    <option data-skin="skin-2" value="#C6487E">#C6487E</option>
-                    <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
-                  </select><div class="dropdown dropdown-colorpicker">		<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="btn-colorpicker" style="background-color:#438EB9"></span></a><ul class="dropdown-menu dropdown-caret"><li><a class="colorpick-btn selected" href="#" style="background-color:#438EB9;" data-color="#438EB9"></a></li><li><a class="colorpick-btn" href="#" style="background-color:#222A2D;" data-color="#222A2D"></a></li><li><a class="colorpick-btn" href="#" style="background-color:#C6487E;" data-color="#C6487E"></a></li><li><a class="colorpick-btn" href="#" style="background-color:#D0D0D0;" data-color="#D0D0D0"></a></li></ul></div>
-                </div>
-                <span>&nbsp; Choose Skin</span>
-              </div>
-
-              <div class="ace-settings-item">
-                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar">
-                <label class="lbl" for="ace-settings-navbar"> Fixed
-                  Navbar</label>
-              </div>
-
-              <div class="ace-settings-item">
-                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar">
-                <label class="lbl" for="ace-settings-sidebar"> Fixed
-                  Sidebar</label>
-              </div>
-
-              <div class="ace-settings-item">
-                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs">
-                <label class="lbl" for="ace-settings-breadcrumbs"> Fixed
-                  Breadcrumbs</label>
-              </div>
-
-              <div class="ace-settings-item">
-                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl">
-                <label class="lbl" for="ace-settings-rtl"> Right To Left
-                  (rtl)</label>
-              </div>
-
-              <div class="ace-settings-item">
-                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container">
-                <label class="lbl" for="ace-settings-add-container">
-                  Inside
-                  <b>.container</b>
-                </label>
-              </div>
-            </div><!-- /.pull-left -->
-
-            <div class="pull-left width-50">
-              <div class="ace-settings-item">
-                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover">
-                <label class="lbl" for="ace-settings-hover"> Submenu on
-                  Hover</label>
-              </div>
-
-              <div class="ace-settings-item">
-                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact">
-                <label class="lbl" for="ace-settings-compact"> Compact
-                  Sidebar</label>
-              </div>
-
-              <div class="ace-settings-item">
-                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight">
-                <label class="lbl" for="ace-settings-highlight"> Alt. Active
-                  Item</label>
-              </div>
-            </div><!-- /.pull-left -->
-          </div><!-- /.ace-settings-box -->
-        </div><!-- /.ace-settings-container -->
 
         <div class="page-header">
           <h1>
@@ -129,7 +56,8 @@
             <h4 class="widget-title lighter">New Item Wizard</h4>
           </div>
           <div class="widget-body">
-            <div class="widget-main" id="listForm">
+            <div class="widget-main" >
+              <form:form   id="listForm" >
               <div class="row">
                 <div class="form-group">
                   <div class="col-xs-12">
@@ -247,19 +175,19 @@
                     <div class="col-xs-9">
                       <button type="button" class="btn btn-danger" id="btnSearchBuilding">Tìm kiếm</button>
                     </div>
-
-
-
                   </div>
                 </div>
 
                 <div class=" pull-right">
                   <button class="btn">Xóa </button>
-                  <button class="btn btn-primary">Thêm</button>
+                  <a class="btn btn-primary"  href='/admin/building-edit'>Thêm</a>
                 </div>
               </div>
 
-              <hr>
+              </form:form>
+
+
+
             </div><!-- /.widget-main -->
           </div><!-- /.widget-body -->
         </div>
@@ -311,9 +239,9 @@
                     <button class="btn btn-xs btn-success" title="Giao tòa nhà" onclick="assignmentBuilding(1)">
                       <i class="ace-icon fa fa-check bigger-120"></i>
                     </button>
-                    <button class="btn btn-xs btn-info">
+                    <a href='/admin/building-edit' class="btn btn-xs btn-info">
                       <i class="ace-icon fa fa-pencil bigger-120"></i>
-                    </button>
+                    </a>
                     <button class="btn btn-xs btn-danger">
                       <i class="ace-icon fa fa-trash-o bigger-120"></i>
                     </button>
@@ -346,9 +274,9 @@
                     <button class="btn btn-xs btn-success">
                       <i class="ace-icon fa fa-check bigger-120"></i>
                     </button>
-                    <button class="btn btn-xs btn-info">
+                    <a class="btn btn-xs btn-info" href='/admin/building-edit'>
                       <i class="ace-icon fa fa-pencil bigger-120"></i>
-                    </button>
+                    </a>
                     <button class="btn btn-xs btn-danger">
                       <i class="ace-icon fa fa-trash-o bigger-120"></i>
                     </button>
@@ -368,3 +296,21 @@
   </body>
 </html>
 
+
+<script>
+    function assignmentBuilding(buildingId) {
+        $('#assignmentBuildingModal').modal();
+        $('#buildingId').val();
+    }
+
+    $('#btnassignmentBuilding').click(function(e){
+        e.preventDefault();
+        var data={};
+        data['buildingId'] =$('buildingId').val();
+        var staffs= $('#staffList').find('tbody input[type = checkbox]:checked').map(function(){
+            return $(this).val();
+        }).get();
+        data['staffs']=staffs;
+        console.log("OK");
+    });
+</script>
