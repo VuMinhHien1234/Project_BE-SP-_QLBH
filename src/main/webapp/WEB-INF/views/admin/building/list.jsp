@@ -63,11 +63,11 @@
                   <div class="col-xs-12">
                     <div class="col-xs-6">
                       <label class="name"> Tên tòa nhà </label>
-                      <input type="text" class="form-control" id="name" name="name">
+                      <input type="text" class="form-control" id="name" name="name" value="">
                     </div>
                     <div class="col-xs-6">
                       <label class="name"> Diện tích sàn </label>
-                      <input type="number" class="form-control" id="floorarea" name="floorarea">
+                      <input type="number" class="form-control" id="floorarea" name="floorarea" value="">
                     </div>
                   </div>
                 </div>
@@ -75,7 +75,7 @@
                   <div class="col-xs-12">
                     <div class="col-xs-2">
                       <label class="name"> Quận </label>
-                      <select id="districtid" class="col-sm-6" name="districtid">
+                      <select id="districtid" class="col-sm-6" name="districtid" value="">
                         <option value="">--Chọn Quận--</option>
                         <option value="">Quận 1</option>
                         <option value="">Quận 2</option>
@@ -86,11 +86,11 @@
                     </div>
                     <div class="col-xs-5">
                       <label class="name"> Phường </label>
-                      <input type="text" id="ward" name="ward" class="form-control">
+                      <input type="text" id="ward" name="ward" class="form-control" value="">
                     </div>
                     <div class="col-xs-5">
                       <label class="name"> Đường </label>
-                      <input type="text" id="street" name="street" class="form-control">
+                      <input type="text" id="street" name="street" class="form-control" value="">
                     </div>
                   </div>
                 </div>
@@ -99,15 +99,15 @@
 
                     <div class="col-xs-4">
                       <label class="name"> Số tầng hầm </label>
-                      <input type="number" id="numberOfBasement" name="numberOfBasement" class="form-control">
+                      <input type="number" id="numberOfBasement" name="numberOfBasement" class="form-control" value="">
                     </div>
                     <div class="col-xs-4">
                       <label class="name"> Hướng </label>
-                      <input type="text" id="direction" name="direction" class="form-control">
+                      <input type="text" id="direction" name="direction" class="form-control" value="">
                     </div>
                     <div class="col-xs-4">
                       <label class="name"> Hạng </label>
-                      <input type="text" id="level" name="level" class="form-control">
+                      <input type="text" id="level" name="level" class="form-control" value="">
                     </div>
                   </div>
                 </div>
@@ -116,19 +116,19 @@
 
                     <div class="col-xs-3">
                       <label class="name"> Diện tích từ </label>
-                      <input type="text" id="re" name="level" class="form-control">
+                      <input type="text" id="areaFrom" name="areaFrom" class="form-control" value="">
                     </div>
                     <div class="col-xs-3">
                       <label class="name"> Diện tích đến </label>
-                      <input type="number" class="form-control">
+                      <input type="number"  id="areaTo" name="areaTo" class="form-control" value="">
                     </div>
                     <div class="col-xs-3">
                       <label class="name"> Giá thuê từ </label>
-                      <input type="number" class="form-control">
+                      <input type="number"  id="rentPriceFrom" name="rentPriceFrom" class="form-control" value="">
                     </div>
                     <div class="col-xs-3">
                       <label class="name"> Giá thuê đến </label>
-                      <input type="number" class="form-control">
+                      <input type="number" id="rentPriceTo" name="rentPriceTo" class="form-control" value="">
                     </div>
                   </div>
                 </div>
@@ -136,20 +136,20 @@
                   <div class="col-xs-12">
                     <div class="col-xs-4">
                       <label class="name"> Tên quản lý </label>
-                      <input type="number" class="form-control">
+                      <input type="number" id="managerName" name="managerName" class="form-control" value="">
                     </div>
                     <div class="col-xs-4">
                       <label class="name"> Điện thoại quản lý </label>
-                      <input type="number" class="form-control">
+                      <input type="number" id="managerPhone" name="managerName" class="form-control" value="">
                     </div>
                     <div class="col-xs-2">
                       <label class="name"> Chọn nhân viên phụ trách </label>
                       <select class="form-control">
                         <option value="">--Chọn nhân viên--</option>
-                        <option value="">Nguyễn Văn A</option>
-                        <option value="">Nguyễn Văn B</option>
-                        <option value="">Nguyễn Văn C</option>
-                        <option value="">Nguyễn Văn D</option>
+                        <option value="1">Nguyễn Văn A</option>
+                        <option value="2">Nguyễn Văn B</option>
+                        <option value="3">Nguyễn Văn C</option>
+                        <option value="4">Nguyễn Văn D</option>
                       </select>
                     </div>
 
@@ -159,13 +159,13 @@
                   <div class="col-xs-12">
                     <div class="col-xs-6">
                       <label class="checkbox-inline">
-                        <input type="checkbox"> Nội thất
+                        <input name="checkbox" type="checkbox" value="noi-that"> Nội thất
                       </label>
                       <label class="checkbox-inline">
-                        <input type="checkbox"> Nguyên Căn
+                        <input  name="checkbox" type="checkbox" value="nguyen-can"> Nguyên Căn
                       </label>
                       <label class="checkbox-inline">
-                        <input type="checkbox"> Tầng Trệt
+                        <input  name="checkbox" type="checkbox" value="tang-tret"> Tầng Trệt
                       </label>
                     </div>
                   </div>
