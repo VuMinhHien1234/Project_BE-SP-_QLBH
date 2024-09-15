@@ -57,8 +57,8 @@ public class BuildingController {
         ModelAndView mav = new ModelAndView("admin/building/edit");
 
         BuildingDTO buildingDTO = new BuildingDTO();
-        buildingDTO.setName("HIEN");
-        mav.addObject("buildingEdit",buildingDTO);
+        buildingDTO.setName("ditmemay");
+        mav.addObject("buildingDTO",buildingDTO);
         return mav;
     }
 

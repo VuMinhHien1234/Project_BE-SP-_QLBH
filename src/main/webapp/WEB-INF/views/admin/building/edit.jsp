@@ -64,7 +64,7 @@
                 <label class="col-sm-3"> Tên tòa nhà </label>
 
                 <div class="col-sm-9">
-                  <input type="text" id="name" name="name" class="form-control">
+                  <form:input  path="name" class="form-control"/>
                 </div>
               </div>
             </div>
@@ -240,8 +240,14 @@
               <div class="form-group">
                 <label class="col-xs-3"></label>
                 <div class="col-xs-9">
-                  <button class="btn btn-success" style="margin-right: 8px;" >Thêm tòa nhà</button>
-                  <button class="btn btn-danger" id="btnAddBuilding">Hủy tòa nhà</button>
+
+                  <button class="btn btn-success" type="button" style="margin-right: 8px;" id="btnAddBuilding">Cập nhập tòa nhà</button>
+                  <button type="button" class="btn btn-danger" >Hủy tòa nhà</button>
+
+<%--                  <c:if test="${ empty buildingEdit.id}">--%>
+<%--                  <button class="btn btn-success" style="margin-right: 8px;" id="btnAddBuilding">Thêm tòa nhà</button>--%>
+<%--                  <button class="btn btn-danger" >Hủy tòa nhà</button>--%>
+<%--                  </c:if>--%>
                 </div>
               </div>
             </div>
