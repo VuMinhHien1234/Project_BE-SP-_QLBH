@@ -251,7 +251,7 @@
                     <button class="btn btn-xs btn-success" title="Giao tòa nhà" onclick="assignmentBuilding(${item.id})">
                       <i class="ace-icon fa fa-check bigger-120"></i>
                     </button>
-                    <a href='/admin/building-edit' class="btn btn-xs btn-info">
+                    <a href='/admin/building-edit-${item.id}'  title="Sửa tòa nhà" class="btn btn-xs btn-info">
                       <i class="ace-icon fa fa-pencil bigger-120"></i>
                     </a>
                     <button class="btn btn-xs btn-danger">
