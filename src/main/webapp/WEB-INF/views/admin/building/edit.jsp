@@ -55,16 +55,13 @@
         </div>
         <div class="row" style="margin-top: 10px;">
           <form:form method="GET" id="listForm" modelAttribute="buildingEdit">
+          <div class="col-xs-12">
          <form class="form-horizontal" role="form" id="form-edit">
-
             <div class="col-xs-12" style="margin-top: 10px;">
-
-
               <div class="form-group">
                 <label class="col-sm-3"> Tên tòa nhà </label>
-
                 <div class="col-sm-9">
-                  <form:input  path="name" class="form-control"/>
+                  <form:input class="form-control" path="name"/>
                 </div>
               </div>
             </div>
@@ -124,7 +121,7 @@
                 <label class="col-sm-3 control-label no-padding-right" >Diện tích sàn</label>
 
                 <div class="col-sm-9">
-                  <input type="number" id="floorarea" name="floorarea" class="form-control">
+                  <input type="number" id="floorArea" name="floorArea" class="form-control">
                 </div>
               </div>
             </div>
@@ -240,18 +237,19 @@
               <div class="form-group">
                 <label class="col-xs-3"></label>
                 <div class="col-xs-9">
-
-                  <button class="btn btn-success" type="button" style="margin-right: 8px;" id="btnAddBuilding">Cập nhập tòa nhà</button>
+                   <c:if test="${not empty buildingEdit.id}">
+                  <button  class="btn btn-success" type="button" style="margin-right: 8px;" id="btnAddBuilding">Cập nhập tòa nhà</button>
                   <button type="button" class="btn btn-danger" >Hủy tòa nhà</button>
-
-<%--                  <c:if test="${ empty buildingEdit.id}">--%>
-<%--                  <button class="btn btn-success" style="margin-right: 8px;" id="btnAddBuilding">Thêm tòa nhà</button>--%>
-<%--                  <button class="btn btn-danger" >Hủy tòa nhà</button>--%>
-<%--                  </c:if>--%>
+                  </c:if>
+                  <c:if test="${ empty buildingEdit.id}">
+                  <button type="button" class="btn btn-success" style="margin-right: 8px;" id="btnAddBuilding">Thêm tòa nhà</button>
+                  <button type="button" class="btn btn-danger" >Hủy tòa nhà</button>
+                  </c:if>
                 </div>
               </div>
             </div>
           </form>
+          </div>
           </form:form>
 
         </div>
