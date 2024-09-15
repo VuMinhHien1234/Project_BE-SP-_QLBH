@@ -63,11 +63,14 @@
                   <div class="col-xs-12">
                     <div class="col-xs-6">
                       <label class="name"> Tên tòa nhà </label>
-                      <input type="text" class="form-control" id="name" name="name" value="${modelSearch.name}">
+<%--                      <input type="text" class="form-control" id="name" name="name" value="${modelSearch.name}">--%>
+                          <form:input class="form-control" path="name"/>
+
                     </div>
                     <div class="col-xs-6">
                       <label class="name"> Diện tích sàn </label>
-                      <input type="number" class="form-control" id="floorArea" name="floorArea" value="${modelSearch.floorArea}">
+<%--                      <input type="number" class="form-control" id="floorArea" name="floorArea" value="${modelSearch.floorArea}">--%>
+                   <form:input class="form-control" path="floorArea"/>
                     </div>
                   </div>
                 </div>
@@ -75,39 +78,43 @@
                   <div class="col-xs-12">
                     <div class="col-xs-2">
                       <label class="name"> Quận </label>
-                      <select id="districtid" class="col-sm-6" name="districtid" value="">
-                        <option value="">--Chọn Quận--</option>
-                        <option value="">Quận 1</option>
-                        <option value="">Quận 2</option>
-                        <option value="">Quận 3</option>
-                        <option value="">Quận 4</option>
+                      <form:select  class="form-control"  path="district">
+                        <form:option value="">--Chọn Quận--</form:option>
+                        <form:option value="">Quận 1</form:option>
+                        <form:option value="">Quận 2</form:option>
+                        <form:option value="">Quận 3</form:option>
+                        <form:option value="">Quận 4</form:option>
 
-                      </select>
+                      </form:select>
                     </div>
                     <div class="col-xs-5">
                       <label class="name"> Phường </label>
-                      <input type="text" id="ward" name="ward" class="form-control" value="${modelSearch.ward}">
+<%--                      <input type="text" id="ward" name="ward" class="form-control" value="${modelSearch.ward}">--%>
+                       <form:input class="form-control" path="ward"/>
                     </div>
                     <div class="col-xs-5">
                       <label class="name"> Đường </label>
-                      <input type="text" id="street" name="street" class="form-control" value="${modelSearch.street}">
+<%--                      <input type="text" id="street" name="street" class="form-control" value="${modelSearch.street}">--%>
+                       <form:input class="form-control" path="street"/>
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-xs-12">
-
                     <div class="col-xs-4">
                       <label class="name"> Số tầng hầm </label>
-                      <input type="number" id="numberOfBasement" name="numberOfBasement" class="form-control" value="${modelSearch.numberOfBasement}">
+<%--                      <input type="number" id="numberOfBasement" name="numberOfBasement" class="form-control" value="${modelSearch.numberOfBasement}">--%>
+                     <form:input class="form-control" path="numberOfBasement"/>
                     </div>
                     <div class="col-xs-4">
                       <label class="name"> Hướng </label>
-                      <input type="text" id="direction" name="direction" class="form-control" value="${modelSearch.direction}">
+<%--                      <input type="text" id="direction" name="direction" class="form-control" value="${modelSearch.direction}">--%>
+                    <form:input class="form-control" path="direction"/>
                     </div>
                     <div class="col-xs-4">
                       <label class="name"> Hạng </label>
-                      <input type="text" id="level" name="level" class="form-control" value="${modelSearch.level}">
+<%--                      <input type="text" id="level" name="level" class="form-control" value="${modelSearch.level}">--%>
+                     <form:input class="form-control" path="level"/>
                     </div>
                   </div>
                 </div>
@@ -136,11 +143,13 @@
                   <div class="col-xs-12">
                     <div class="col-xs-4">
                       <label class="name"> Tên quản lý </label>
-                      <input type="number" id="managerName" name="managerName" class="form-control" value="${modelSearch.name}">
+<%--                      <input type="number" id="managerName" name="managerName" class="form-control" value="${modelSearch.name}">--%>
+                     <form:input class="form-control" path="managerName"/>
                     </div>
                     <div class="col-xs-4">
                       <label class="name"> Điện thoại quản lý </label>
-                      <input type="number" id="managerPhone" name="managerName" class="form-control" value="${modelSearch.name}">
+<%--                      <input type="number" id="managerPhone" name="managerName" class="form-control" value="${modelSearch.name}">--%>
+                     <form:input class="form-control" path="managerPhone"/>
                     </div>
                     <div class="col-xs-2">
                       <label class="name"> Chọn nhân viên phụ trách </label>
@@ -159,13 +168,13 @@
                   <div class="col-xs-12">
                     <div class="col-xs-6">
                       <label class="checkbox-inline">
-                        <input name="checkbox" type="checkbox" value="noi-that"> Nội thất
+                        <input name="typeCode" type="checkbox" value="noi-that"> Nội thất
                       </label>
                       <label class="checkbox-inline">
-                        <input  name="checkbox" type="checkbox" value="nguyen-can"> Nguyên Căn
+                        <input  name="typeCode" type="checkbox" value="nguyen-can"> Nguyên Căn
                       </label>
                       <label class="checkbox-inline">
-                        <input  name="checkbox" type="checkbox" value="tang-tret"> Tầng Trệt
+                        <input  name="typeCode" type="checkbox" value="tang-tret"> Tầng Trệt
                       </label>
                     </div>
                   </div>
@@ -198,7 +207,7 @@
               <tr>
                 <th class="center">
                   <label class="pos-rel">
-                    <input type="checkbox" class="ace">
+                    <input type="checkbox" name="checkList" value="${item}" class="ace">
                     <span class="lbl"></span>
                   </label>
                 </th>
@@ -217,26 +226,29 @@
               </thead>
 
               <tbody>
-              <tr>
+              <c:forEach var="item" items="${buildingList}">
+                <tr>
                 <td class="center">
-                  <input type="checkbox" class="ace">
+                   <label>
+                    <input type="checkbox" class="ace" name="checkList" value="${item.id}">
+                    <span class="lbl"></span>
+                </label>
                 </td>
 
                 <td>
-                  ACM Building
+                  ${item.name}
                 </td>
-                <td>$45</td>
-                <td class="hidden-480">3,330</td>
-                <td>ACM Building</td>
-                <td>59 Phan Xích Long,Phường 2, Quận 1</td>
-                <td>3</td>
-                <td>Anh Nam-Chị Linh</td>
-                <td>Feb 12</td>
-                <td>Feb 12</td>
-
+                <td>${item.address}</td>
+                <td>${item.numberOfBasement}</td>
+                <td>${item.managerName}</td>
+                <td>${item.managerPhone}</td>
+                <td>${item.floorArea}</td>
+                <td>${item.rentArea}</td>
+                <td>${item.id}</td>
+                <td>${item.id}</td>
                 <td>
                   <div class="hidden-sm hidden-xs btn-group">
-                    <button class="btn btn-xs btn-success" title="Giao tòa nhà" onclick="assignmentBuilding(1)">
+                    <button class="btn btn-xs btn-success" title="Giao tòa nhà" onclick="assignmentBuilding(${item.id})">
                       <i class="ace-icon fa fa-check bigger-120"></i>
                     </button>
                     <a href='/admin/building-edit' class="btn btn-xs btn-info">
@@ -248,41 +260,12 @@
                   </div>
                 </td>
               </tr>
+              </c:forEach>
 
 
 
-              <tr>
-                <td class="center">
-                  <label class="pos-rel">
-                    <input type="checkbox" class="ace">
-                    <span class="lbl"></span>
-                  </label>
-                </td>
-                <td>
-                  ACM Building
-                </td>
-                <td>$35</td>
-                <td class="hidden-480">2,595</td>
-                <td>Feb 18</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                  <div class="hidden-sm hidden-xs btn-group">
-                    <button class="btn btn-xs btn-success">
-                      <i class="ace-icon fa fa-check bigger-120"></i>
-                    </button>
-                    <a class="btn btn-xs btn-info" href='/admin/building-edit'>
-                      <i class="ace-icon fa fa-pencil bigger-120"></i>
-                    </a>
-                    <button class="btn btn-xs btn-danger">
-                      <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                    </button>
-                  </div>
-                </td>
-              </tr>
+
+
 
 
 
@@ -318,6 +301,3 @@
   </script>
   </body>
 </html>
-
-
-
