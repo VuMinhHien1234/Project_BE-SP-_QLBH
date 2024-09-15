@@ -57,17 +57,17 @@
           </div>
           <div class="widget-body">
             <div class="widget-main" >
-              <form:form id="listForm" action="/admin/building-list" method="GET" >
+              <form:form id="listForm"  modelAttribute="modelSearch" action="/admin/building-list" method="GET" >
               <div class="row">
                 <div class="form-group">
                   <div class="col-xs-12">
                     <div class="col-xs-6">
                       <label class="name"> Tên tòa nhà </label>
-                      <input type="text" class="form-control" id="name" name="name" value="">
+                      <input type="text" class="form-control" id="name" name="name" value="${modelSearch.name}">
                     </div>
                     <div class="col-xs-6">
                       <label class="name"> Diện tích sàn </label>
-                      <input type="number" class="form-control" id="floorarea" name="floorarea" value="">
+                      <input type="number" class="form-control" id="floorArea" name="floorArea" value="${modelSearch.floorArea}">
                     </div>
                   </div>
                 </div>
@@ -86,11 +86,11 @@
                     </div>
                     <div class="col-xs-5">
                       <label class="name"> Phường </label>
-                      <input type="text" id="ward" name="ward" class="form-control" value="">
+                      <input type="text" id="ward" name="ward" class="form-control" value="${modelSearch.ward}">
                     </div>
                     <div class="col-xs-5">
                       <label class="name"> Đường </label>
-                      <input type="text" id="street" name="street" class="form-control" value="">
+                      <input type="text" id="street" name="street" class="form-control" value="${modelSearch.street}">
                     </div>
                   </div>
                 </div>
@@ -99,15 +99,15 @@
 
                     <div class="col-xs-4">
                       <label class="name"> Số tầng hầm </label>
-                      <input type="number" id="numberOfBasement" name="numberOfBasement" class="form-control" value="">
+                      <input type="number" id="numberOfBasement" name="numberOfBasement" class="form-control" value="${modelSearch.numberOfBasement}">
                     </div>
                     <div class="col-xs-4">
                       <label class="name"> Hướng </label>
-                      <input type="text" id="direction" name="direction" class="form-control" value="">
+                      <input type="text" id="direction" name="direction" class="form-control" value="${modelSearch.direction}">
                     </div>
                     <div class="col-xs-4">
                       <label class="name"> Hạng </label>
-                      <input type="text" id="level" name="level" class="form-control" value="">
+                      <input type="text" id="level" name="level" class="form-control" value="${modelSearch.level}">
                     </div>
                   </div>
                 </div>
@@ -116,19 +116,19 @@
 
                     <div class="col-xs-3">
                       <label class="name"> Diện tích từ </label>
-                      <input type="text" id="areaFrom" name="areaFrom" class="form-control" value="">
+                      <input type="text" id="areaFrom" name="areaFrom" class="form-control" >
                     </div>
                     <div class="col-xs-3">
                       <label class="name"> Diện tích đến </label>
-                      <input type="number"  id="areaTo" name="areaTo" class="form-control" value="">
+                      <input type="number"  id="areaTo" name="areaTo" class="form-control" >
                     </div>
                     <div class="col-xs-3">
                       <label class="name"> Giá thuê từ </label>
-                      <input type="number"  id="rentPriceFrom" name="rentPriceFrom" class="form-control" value="">
+                      <input type="number"  id="rentPriceFrom" name="rentPriceFrom" class="form-control" value="${modelSearch.rentPrice}">
                     </div>
                     <div class="col-xs-3">
                       <label class="name"> Giá thuê đến </label>
-                      <input type="number" id="rentPriceTo" name="rentPriceTo" class="form-control" value="">
+                      <input type="number" id="rentPriceTo" name="rentPriceTo" class="form-control">
                     </div>
                   </div>
                 </div>
@@ -136,11 +136,11 @@
                   <div class="col-xs-12">
                     <div class="col-xs-4">
                       <label class="name"> Tên quản lý </label>
-                      <input type="number" id="managerName" name="managerName" class="form-control" value="">
+                      <input type="number" id="managerName" name="managerName" class="form-control" value="${modelSearch.name}">
                     </div>
                     <div class="col-xs-4">
                       <label class="name"> Điện thoại quản lý </label>
-                      <input type="number" id="managerPhone" name="managerName" class="form-control" value="">
+                      <input type="number" id="managerPhone" name="managerName" class="form-control" value="${modelSearch.name}">
                     </div>
                     <div class="col-xs-2">
                       <label class="name"> Chọn nhân viên phụ trách </label>

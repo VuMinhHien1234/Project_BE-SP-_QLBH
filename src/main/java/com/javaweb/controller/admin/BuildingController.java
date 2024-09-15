@@ -17,6 +17,7 @@ public class BuildingController {
     @RequestMapping(value="/admin/building-list", method = RequestMethod.GET)
     public ModelAndView buildingList(@ModelAttribute BuildingDTO buildingDTO, HttpServletRequest request){
         ModelAndView mav = new ModelAndView("admin/building/list");
+        mav.addObject("modelSearch",buildingDTO);// sau khi tim kiem va hien ket qua cac fields van duoc gan du lieu
         return mav;
     }
 
