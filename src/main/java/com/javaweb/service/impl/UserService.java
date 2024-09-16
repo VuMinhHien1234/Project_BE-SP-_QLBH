@@ -19,7 +19,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -63,8 +65,6 @@ public class UserService implements IUserService {
         return result;
     }
 
-
-
     @Override
     public List<UserDTO> getAllUsers(Pageable pageable) {
         List<UserEntity> userEntities = userRepository.getAllUsers(pageable);
@@ -82,6 +82,15 @@ public class UserService implements IUserService {
         return userRepository.countTotalItem();
     }
 
+    @Override
+    public Map<Long, String> getStaffs() {
+        Map<Long,String> listStaffs = new HashMap<>();
+        List<UserEntity> staffs = userRepository.findByStatusAndRoles_Code(1,"STAFF");
+        for(UserEntity it : staffs){
+            listStaffs.put(it.getId(),it.getFullName());
+        }
+        return listStaffs;
+    }
 
 
     @Override

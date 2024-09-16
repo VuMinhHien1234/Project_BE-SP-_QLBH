@@ -36,6 +36,15 @@ public class BuildingDTO extends AbstractDTO{
     private String imageBase64;
     private String imageName;
 
+    private Long staffId;
+
+    public Long getStaffId() {
+        return staffId;
+    }
+
+    public void setStaffId(Long staffId) {
+        this.staffId = staffId;
+    }
 
     private Map<String,String> buildingDTOs = new HashMap<>();
 

@@ -3,14 +3,14 @@ package com.javaweb.enums;
 
 import java.util.*;
 
-public enum  buildingType {
+public enum TypeCode {
     TANG_TRET ("Tầng Trệt "),
     NGUYEN_CAN ("Nguyên Căn "),
     NOI_THAT ("Nội Thất ");
 
     private final String name;
 
-    buildingType(String name) {
+    TypeCode(String name) {
         this.name = name;
     }
 
@@ -19,10 +19,10 @@ public enum  buildingType {
     }
 
     public static Map<String,String> type(){
-        Map<String,String> listType = new HashMap<>();
-        for(buildingType item : buildingType.values()){
-            listType.put(item.toString() , item.name);
+        Map<String,String> typeCodes = new TreeMap<>();
+        for(TypeCode item : TypeCode.values()){
+            typeCodes.put(item.toString() , item.name);
         }
-        return listType;
+        return  typeCodes;
     }
 }

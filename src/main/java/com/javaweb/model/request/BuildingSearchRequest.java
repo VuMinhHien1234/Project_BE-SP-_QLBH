@@ -21,7 +21,15 @@ public class BuildingSearchRequest extends AbstractDTO {
     private String managerPhone;
     private Long staffId;
     private List<String> typeCode;
+    private String rentArea;
 
+    public String getRentArea() {
+        return rentArea;
+    }
+
+    public void setRentArea(String rentArea) {
+        this.rentArea = rentArea;
+    }
 
     public String getName() {
         return name;
