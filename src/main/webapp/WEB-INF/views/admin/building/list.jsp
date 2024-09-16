@@ -5,11 +5,11 @@
   Time: 8:53 PM
   To change this template use File | Settings | File Templates.
 --%>
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <c:url var="buildingListURL" value="admin/building-list"/>
-
+<c:url var="buildingAPI" value="/api/building"/>
 <html>
 <head>
   <title>Danh sach toa nha</title>
@@ -172,7 +172,7 @@
               </div>
               </form:form>
               <div class=" pull-right">
-                <button class="btn">Xóa</button>
+                <button class="btn" id="btnDeleteBuilding">Xóa</button>
                 <a class="btn btn-primary" href='/admin/building-edit'>Thêm</a>
               </div>
             </div>
@@ -183,7 +183,7 @@
       </div>
       <div class="row" style="margin-top: 40px;">
         <div class="col-xs-12">
-          <table id="simple-table" class="table table-striped table-bordered table-hover">
+          <table id="tableList" class="table table-striped table-bordered table-hover">
             <thead>
             <tr>
               <th class="center">
@@ -233,7 +233,7 @@
                     <a href='/admin/building-edit-${item.id}' title="Sửa tòa nhà" class="btn btn-xs btn-info">
                       <i class="ace-icon fa fa-pencil bigger-120"></i>
                     </a>
-                    <button class="btn btn-xs btn-danger">
+                    <button class="btn btn-xs btn-danger" title="Xóa tòa nhà" onclick="deleteBuilding(${item.id})">
                       <i class="ace-icon fa fa-trash-o bigger-120"></i>
                     </button>
                   </div>
@@ -269,7 +269,35 @@
         e.preventDefault();
         $('#listForm').submit();
     });
+       function deleteBuilding(id) {
+        var buildingId = [id];
+        deleteBuildings(buildingId)
+    }
 
+    $('#btnDeleteBuilding').click(function (e) {
+        e.preventDefault();
+        var buildingIds = $('#tableList').find('tbody input[type = checkbox]:checked').map(function () {
+            return $(this).val();
+        }).get();
+       deleteBuildings(buildingIds);
+    });
+
+    function deleteBuildings(data){
+            $.ajax({
+            type: "Delete",
+            url: "/api/building/"+ data,
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            dataType: "JSON",
+            success: function (respond) {
+                console.log("Success");
+            },
+            error: function (respond) {
+                console.log("failed");
+                console.log(respond);
+            }
+        });
+    }
 </script>
 </body>
 </html>

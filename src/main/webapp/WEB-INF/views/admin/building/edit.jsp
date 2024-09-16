@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/common/taglib.jsp" %>
->
+
 <c:url var="buildingAPI" value="/api/building"/>
 <html>
 <head>
@@ -236,13 +236,13 @@
                         <button class="btn btn-success" type="button" style="margin-right: 8px;"
                                 id="btnAddOrUpdateBuilding">Cập nhập tòa nhà
                         </button>
-                        <button type="button" class="btn btn-danger">Hủy tòa nhà</button>
+                        <button type="button" id = "btnCancel" class="btn btn-danger">Hủy tòa nhà</button>
                       </c:if>
                       <c:if test="${ empty buildingEdit.id}">
                         <button type="button" class="btn btn-success" style="margin-right: 8px;"
                                 id="btnAddOrUpdateBuilding">Thêm tòa nhà
                         </button>
-                        <button type="button" class="btn btn-danger">Hủy tòa nhà</button>
+                        <button type="button" id = "btnCancel" class="btn btn-danger">Hủy tòa nhà</button>
                       </c:if>
                     </div>
                   </div>
@@ -271,7 +271,15 @@
 
         });
         data['typeCode'] = typeCode;
-        console.log("OK");
+        if(typeCode!=''){
+        addOrUpdateBuilding(data);
+        }
+        else{
+        window.location.href = "<c:url value= "/admin/building-edit?typeCode=require"/>";
+        }
+
+    });
+        function addOrUpdateBuilding(data){
         //call api
         $.ajax({
             type: "POST",
@@ -287,6 +295,11 @@
                 console.log(respond);
             }
         });
+        }
+
+
+    $('#btnCancel').click(function (){
+        window.location.href="/admin/building-list";
     });
 
 </script>
