@@ -226,8 +226,7 @@
                 <td>${item.id}</td>
                 <td>
                   <div class="hidden-sm hidden-xs btn-group">
-                    <button class="btn btn-xs btn-success" title="Giao tòa nhà"
-                            onclick="assignmentBuilding(${item.id})">
+                      <button class="btn btn-xs btn-success" title="Giao tòa nhà" onclick="assignmentBuilding(${item.id})">
                       <i class="ace-icon fa fa-check bigger-120"></i>
                     </button>
                     <a href='/admin/building-edit-${item.id}' title="Sửa tòa nhà" class="btn btn-xs btn-info">
@@ -247,12 +246,92 @@
       </div>
     </div><!-- /.page-content -->
   </div>
+  <div class="modal fade" id="assignmentBuildingModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Danh sách nhân viên</h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col-xs-12">
+
+              <table class="table table-striped table-bordered table-hover" id="staffList">
+                <thead>
+                  <tr>
+                    <th class="center">Chọn</th>
+                    <th class="center">Tên nhân viên</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+<%--                  <tr>--%>
+<%--                    <td class="center">--%>
+<%--                      <input type="checkbox" id="checkbox_1" value="1" >--%>
+<%--                    </td>--%>
+<%--                    <td class="center">--%>
+<%--                      Nguyễn Văn A--%>
+<%--                    </td>--%>
+<%--                  </tr>--%>
+
+<%--                  <tr>--%>
+<%--                    <td class="center">--%>
+<%--                      <input type="checkbox" id="checkbox_2" value="3">--%>
+<%--                    </td>--%>
+<%--                    <td class="center">--%>
+<%--                      Trần Văn B--%>
+<%--                    </td>--%>
+<%--                  </tr>--%>
+
+                </tbody>
+              </table>
+              <input type="hidden" id="buildingId" name="Building" value="">
+
+            </div><!-- /.span -->
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" id="btnassignmentBuilding">Giao tòa nhà</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 <script>
-    function assignmentBuilding(buildingId) {
-        $('#assignmentBuildingModal').modal();
-        $('#buildingId').val();
-    }
+      function assignmentBuilding(buildingId) {
+          $('#assignmentBuildingModal').modal();
+          $('#buildingId').val();
+      }
+      function loadStaff(buildingId){
+           $.ajax({
+            type: "GET",
+            url: "${buildingAPI}"+ buildingId / 'staffs',
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            dataType: "JSON",
+            success: function (response) {
+                var row ='';
+                $.each(response.data,function(index,item) {
+                  row+='<tr>' ;
+                  row+='<td class="text-center"> <input type="checkbox" value=' +
+                   item.staffId + 'id="checkbox' + item.staffId +item.checked +'/></td>';
+                  row+='<td class ="text-center>'+ item.fullName + '</td>';
+                  row+='</tr>';
+                });
+                console.log("Success");
+            },
+            error: function (response) {
+                console.log("failed");
+                console.log(response);
+            }
+      });
+      }
 
     $('#btnassignmentBuilding').click(function (e) {
         e.preventDefault();
@@ -289,14 +368,15 @@
             data: JSON.stringify(data),
             contentType: "application/json",
             dataType: "JSON",
-            success: function (respond) {
+            success: function (response) {
                 console.log("Success");
             },
-            error: function (respond) {
+            error: function (response) {
                 console.log("failed");
-                console.log(respond);
+                console.log(response);
             }
         });
+
     }
 </script>
 </body>

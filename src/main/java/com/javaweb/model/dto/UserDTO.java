@@ -47,9 +47,7 @@ public class UserDTO extends AbstractDTO {
         this.status = status;
     }
 
-    public List<RoleDTO> getRoles() {
-        return roles;
-    }
+    public List<RoleDTO> getRoles() {return roles;}
 
     public void setRoles(List<RoleDTO> roles) {
         this.roles = roles;

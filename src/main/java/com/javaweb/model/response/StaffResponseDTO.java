@@ -6,6 +6,7 @@ public class StaffResponseDTO {
     private Long staffId;
     private String checked;
 
+
     public String getFullName() {
         return fullName;
     }

@@ -6,7 +6,7 @@ import com.javaweb.enums.TypeCode;
 
 import com.javaweb.enums.districtCode;
 import com.javaweb.model.dto.BuildingDTO;
-import com.javaweb.model.request.BuildingSearchRequest;
+
 import com.javaweb.model.response.BuildingSearchResponse;
 import com.javaweb.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
