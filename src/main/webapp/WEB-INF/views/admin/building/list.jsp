@@ -263,7 +263,7 @@
               <table class="table table-striped table-bordered table-hover" id="staffList">
                 <thead>
                   <tr>
-                    <th class="center">Chọn</th>
+                    <th class="center">Chon</th>
                     <th class="center">Tên nhân viên</th>
                   </tr>
                 </thead>
@@ -286,10 +286,9 @@
 <%--                      Trần Văn B--%>
 <%--                    </td>--%>
 <%--                  </tr>--%>
-
                 </tbody>
               </table>
-              <input type="hidden" id="buildingId" name="Building" value="">
+              <input type="hidden" id="buildingId" name="buildingId" value="">
 
             </div><!-- /.span -->
           </div>
@@ -306,28 +305,29 @@
 <script>
       function assignmentBuilding(buildingId) {
           $('#assignmentBuildingModal').modal();
-          $('#buildingId').val();
+          loadStaff(buildingId);
+          $('#buildingId').val(buildingId);// neu khong gan dong nay thi dong 339 data={buildingId=''}
+          
       }
       function loadStaff(buildingId){
            $.ajax({
+            url: "/api/building/"+ buildingId + '/staffs',
             type: "GET",
-            url: "${buildingAPI}"+ buildingId / 'staffs',
-            data: JSON.stringify(data),
-            contentType: "application/json",
-            dataType: "JSON",
+            dataType: 'json',
             success: function (response) {
                 var row ='';
                 $.each(response.data,function(index,item) {
                   row+='<tr>' ;
-                  row+='<td class="text-center"> <input type="checkbox" value=' +
-                   item.staffId + 'id="checkbox' + item.staffId +item.checked +'/></td>';
-                  row+='<td class ="text-center>'+ item.fullName + '</td>';
+                  row+='<td class="text-center"><input type="checkbox" value=' + item.staffId + ' id="checkbox_' +  item.staffId+ '" class = "check-box-element"' + item.checked +'/></td>';
+                  row+='<td class ="text-center">'+ item.fullName + '</td>';
                   row+='</tr>';
                 });
-                console.log("Success");
+                $('#staffList tbody').html(row);
+                console.info("Success");
             },
             error: function (response) {
                 console.log("failed");
+                 window.location.href = "<c:url value= "/admin/building-list?message=erro"/>";
                 console.log(response);
             }
       });
@@ -336,13 +336,34 @@
     $('#btnassignmentBuilding').click(function (e) {
         e.preventDefault();
         var data = {};
-        data['buildingId'] = $('buildingId').val();
+        data['buildingId'] = $('#buildingId').val();
         var staffs = $('#staffList').find('tbody input[type = checkbox]:checked').map(function () {
             return $(this).val();
         }).get();
         data['staffs'] = staffs;
+        if(data['staffs'] !=''){
+            assignment(data);
+        }
         console.log("OK");
     });
+
+     function assignment(data){
+         $.ajax({
+            url: "/api/building/assigment",
+            type: "POST",
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (response) {
+                console.info("Success");
+            },
+            error: function (response) {
+                console.info("failed");
+                window.location.href = "/admin/building-list?message=erro";
+                console.log(response);
+            }
+      });
+     }
 
     $('#btnSearchBuilding').click(function (e) {
         e.preventDefault();
@@ -367,13 +388,13 @@
             url: "/api/building/"+ data,
             data: JSON.stringify(data),
             contentType: "application/json",
-            dataType: "JSON",
-            success: function (response) {
+            dataType: 'json',
+            success: function (respond) {
                 console.log("Success");
             },
-            error: function (response) {
+            error: function (respond) {
                 console.log("failed");
-                console.log(response);
+                console.log(respond);
             }
         });
 

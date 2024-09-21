@@ -37,13 +37,12 @@ public class BuildingController {
         item1.setName("ACM");
         item1.setAddress("130 Ha NOi");
         item1.setNumberOfBasement(2L);
-
         item1.setManagerPhone("084968");
         BuildingSearchResponse item2 = new BuildingSearchResponse();
-        item2.setId(3L);
+        item2.setId(5L);
         item2.setName("MA");
         item2.setAddress("130Hai Phongh");
-        item2.setNumberOfBasement(2L);
+        item2.setNumberOfBasement(3L);
         item2.setRentArea("100,200,400");
         item2.setManagerPhone("084968");
         responseList.add(item1);

@@ -283,7 +283,7 @@
         //call api
         $.ajax({
             type: "POST",
-            url: "${buildingAPI}",
+            url: "${buildingAPI}/",
             data: JSON.stringify(data),
             contentType: "application/json",
             dataType: "JSON",
