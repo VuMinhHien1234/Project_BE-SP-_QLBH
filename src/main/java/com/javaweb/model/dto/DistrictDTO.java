@@ -1,6 +1,7 @@
 package com.javaweb.model.dto;
 
 public class DistrictDTO {
+
     private Long[] Buildingids;
 
     public Long[] getBuildingids() {

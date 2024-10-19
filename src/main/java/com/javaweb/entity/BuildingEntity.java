@@ -17,36 +17,24 @@ import javax.persistence.*;
   public class BuildingEntity extends BaseEntity {
   @Column(name = "name")
   private String name;
-
   @Column(name = "ward")
   private String ward;
-
   @Column(name = "street")
   private String street;
-
-
   @Column(name = "floorarea")
   private Long floorArea;
-
   @Column(name = "direction")
   private String direction;
-
   @Column(name = "district")
   private String district;
   @Column(name = "level")
   private String level;
-
   @Column(name = "numberofbasement")
   private Integer numberOfBasement;
-
   @Column(name = "rentprice")
   private Long rentPrice;
-
-
   @Column(name = "servicefee")
   private String serviceFee;
-
-
   @Column(name = "motofee")
   private String motoFee;
   @Column(name = "carfee")
@@ -73,7 +61,6 @@ import javax.persistence.*;
   private String note;
   @Column(name = "managername")
   private String managerName;
-
   @Column(name = "managerphone")
   private String managerPhone;
 

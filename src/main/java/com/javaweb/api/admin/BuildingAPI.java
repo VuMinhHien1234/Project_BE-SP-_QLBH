@@ -19,6 +19,7 @@ public class BuildingAPI {
     //xuong DB lay data
     return buildingDTO;
   }
+
   @DeleteMapping("/{ids}")
   public void deleteBuilding(@PathVariable List<Long> ids){
 // xoa building
