@@ -1,7 +1,12 @@
 package com.javaweb.service.impl;
 
+import com.javaweb.builder.BuildingSearchBuilder;
+import com.javaweb.converter.BuildingSearchBuilderConverter;
+import com.javaweb.converter.BuildingSearchResponseConverter;
 import com.javaweb.entity.BuildingEntity;
 import com.javaweb.entity.UserEntity;
+import com.javaweb.model.request.BuildingSearchRequest;
+import com.javaweb.model.response.BuildingSearchResponse;
 import com.javaweb.model.response.ResponseDTO;
 import com.javaweb.model.response.StaffResponseDTO;
 import com.javaweb.repository.BuildingRepository;
@@ -20,6 +25,11 @@ public class BuildingServiceImpl implements BuildingService {
 
   @Autowired
   private UserRepository userRepository;
+
+  @Autowired
+  private BuildingSearchResponseConverter buildingSearchResponseConverter;
+  @Autowired
+  private BuildingSearchBuilderConverter buildingSearchBuilderConverter;
 
   @Override
   public ResponseDTO listStaffs(Long buildingId) {
@@ -44,4 +54,21 @@ public class BuildingServiceImpl implements BuildingService {
     responseDTO.setMessage("success");
     return responseDTO;
   }
+
+  @Override
+  public List<BuildingSearchResponse> findAll(BuildingSearchRequest buildingSearchRequest) {
+    List<String> typeCode = buildingSearchRequest.getTypeCode();
+    BuildingSearchBuilder buildingSearchBuilder = buildingSearchBuilderConverter.toBuildingSearchBuilder(buildingSearchRequest,typeCode);
+    List<BuildingSearchResponse>  res = new ArrayList<>();
+    List<BuildingEntity> buildingEntities = buildingRepository.findAll(buildingSearchBuilder);
+    for(BuildingEntity item : buildingEntities){
+      BuildingSearchResponse building= buildingSearchResponseConverter.tobuildingSearchResponse(item);
+      res.add(building);
+    }
+    return res;
+
+  }
+
+
+
 }

@@ -257,6 +257,9 @@ import javax.persistence.*;
   public void setManagerPhone(String managerPhone) {
     this.managerPhone = managerPhone;
   }
+  @ManyToOne
+  @JoinColumn(name="districtid")
+  private DistrictEntity district;
 
   @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name="assignmentbuilding",
@@ -264,7 +267,16 @@ import javax.persistence.*;
                 inverseJoinColumns = @JoinColumn(name="staffid",nullable = false))
     List<UserEntity> userEntities= new ArrayList<>();
 
+  @OneToMany(mappedBy = "building",fetch = FetchType.LAZY)
+  private List<RentAreaEntity> items = new ArrayList<>();
 
+  public List<RentAreaEntity> getItems() {
+    return items;
+  }
+
+  public void setItems(List<RentAreaEntity> items) {
+    this.items = items;
+  }
 
   public List<UserEntity> getUserEntities() {
     return userEntities;

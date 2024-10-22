@@ -125,8 +125,7 @@
                   </div>
                   <div class="col-xs-3">
                     <label class="name"> Giá thuê từ </label>
-                    <input type="number" id="rentPriceFrom" name="rentPriceFrom" class="form-control"
-                           value="${modelSearch.rentPrice}">
+                    <input type="number" id="rentPriceFrom" name="rentPriceFrom" class="form-control">
                   </div>
                   <div class="col-xs-3">
                     <label class="name"> Giá thuê đến </label>
@@ -181,6 +180,8 @@
           </div><!-- /.widget-main -->
         </div><!-- /.widget-body -->
       </div>
+
+
       <div class="row" style="margin-top: 40px;">
         <div class="col-xs-12">
           <table id="tableList" class="table table-striped table-bordered table-hover">
@@ -359,7 +360,7 @@
             },
             error: function (response) {
                 console.info("failed");
-                window.location.href = "/admin/building-list?message=erro";
+                window.location.href = "/admin/building-list?message=error";
                 console.log(response);
             }
       });

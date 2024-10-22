@@ -287,12 +287,13 @@
             data: JSON.stringify(data),
             contentType: "application/json",
             dataType: "JSON",
-            success: function (respond) {
+            success: function (response) {
                 console.log("Success");
+                 window.location.href = "<c:url value= "/admin/building-list?typeCode=Success"/>";
             },
             error: function (respond) {
                 console.log("failed");
-                console.log(respond);
+                   window.location.href = "<c:url value= "/admin/building-edit?typeCode=error"/>";
             }
         });
         }
